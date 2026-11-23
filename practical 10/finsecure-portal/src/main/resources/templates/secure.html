@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <strong>FinSecure Employee Portal</strong><br><br>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/vulnerable}">Vulnerable Page</a>
+    <a th:href="@{/secure}">Secure Page</a>
+    <a th:href="@{/register}">Register</a>
+</header>
+<main>
+    <div class="card safe">
+        <h2>1. Search (XSS protected)</h2>
+        <p>Input is validated and output is encoded.</p>
+        <form th:action="@{/secure/search}" method="get">
+            <label>Employee name:</label>
+            <input type="text" name="q" maxlength="50">
+            <button type="submit">Search</button>
+        </form>
+        <p class="error" th:if="${searchError}" th:text="${searchError}"></p>
+        <div th:if="${query != null}">
+            <p>You searched for: <span th:text="${query}"></span></p>
+            <table th:if="${!results.isEmpty()}">
+                <tr><th>Name</th><th>Department</th></tr>
+                <tr th:each="row : ${results}">
+                    <td th:text="${row['name']}"></td>
+                    <td th:text="${row['department']}"></td>
+                </tr>
+            </table>
+            <p th:if="${results.isEmpty()}">No employees found.</p>
+        </div>
+        <p>Try the same attacks: they are rejected by validation.</p>
+    </div>
+
+    <div class="card safe">
+        <h2>2. Login (SQL Injection protected)</h2>
+        <p>Uses a prepared statement and BCrypt password check. Register first.</p>
+        <form th:action="@{/secure/login}" method="post">
+            <label>Username:</label>
+            <input type="text" name="username" maxlength="20">
+            <label>Password:</label>
+            <input type="password" name="password">
+            <button type="submit">Login</button>
+        </form>
+        <p class="success" th:if="${loginResult}" th:text="${loginResult}"></p>
+        <p class="error" th:if="${loginError}" th:text="${loginError}"></p>
+    </div>
+</main>
+</body>
+</html>

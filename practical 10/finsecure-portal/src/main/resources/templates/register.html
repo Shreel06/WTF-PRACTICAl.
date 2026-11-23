@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <strong>FinSecure Employee Portal</strong><br><br>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/vulnerable}">Vulnerable Page</a>
+    <a th:href="@{/secure}">Secure Page</a>
+    <a th:href="@{/register}">Register</a>
+</header>
+<main>
+    <div class="card safe">
+        <h2>Create Account</h2>
+        <form th:action="@{/register}" method="post">
+            <label>Username:</label>
+            <input type="text" name="username" maxlength="20">
+            <label>Password:</label>
+            <input type="password" name="password">
+            <label>Confirm password:</label>
+            <input type="password" name="confirm">
+            <button type="submit">Register</button>
+        </form>
+        <p class="error" th:if="${error}" th:text="${error}"></p>
+        <p class="success" th:if="${success}" th:text="${success}"></p>
+        <ul class="rules">
+            <li>Username: 4 to 20 letters, numbers or underscore</li>
+            <li>Password: 8 to 64 characters</li>
+            <li>At least one uppercase, one lowercase, one digit and one special character</li>
+            <li>Confirm password must match</li>
+        </ul>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FinSecure Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <strong>FinSecure Employee Portal</strong><br><br>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/vulnerable}">Vulnerable Page</a>
+    <a th:href="@{/secure}">Secure Page</a>
+    <a th:href="@{/register}">Register</a>
+</header>
+<main>
+    <div class="card">
+        <h2>Web Security Demonstration</h2>
+        <p>This project shows common web vulnerabilities and how to fix them.</p>
+        <ul>
+            <li><a th:href="@{/vulnerable}">Vulnerable page</a> - shows XSS and SQL Injection</li>
+            <li><a th:href="@{/secure}">Secure page</a> - shows the fixed versions</li>
+            <li><a th:href="@{/register}">Register</a> - strong password policy and hashing</li>
+        </ul>
+        <p class="error">For learning only. Run it on your own computer and never deploy the vulnerable page.</p>
+    </div>
+</main>
+</body>
+</html>

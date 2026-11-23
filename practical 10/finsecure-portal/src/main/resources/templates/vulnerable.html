@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vulnerable Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <strong>FinSecure Employee Portal</strong><br><br>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/vulnerable}">Vulnerable Page</a>
+    <a th:href="@{/secure}">Secure Page</a>
+    <a th:href="@{/register}">Register</a>
+</header>
+<main>
+    <div class="card danger">
+        <h2>1. Search (XSS vulnerable)</h2>
+        <p>The search text is printed back on the page without encoding.</p>
+        <form th:action="@{/vulnerable/search}" method="get">
+            <label>Search:</label>
+            <input type="text" name="q">
+            <button type="submit">Search</button>
+        </form>
+        <p th:if="${query != null and !query.isEmpty()}">
+            You searched for: <span th:utext="${query}"></span>
+        </p>
+        <p>Try: <code>&lt;b&gt;hello&lt;/b&gt;</code> or <code>&lt;img src=x onerror=alert('XSS')&gt;</code></p>
+    </div>
+
+    <div class="card danger">
+        <h2>2. Login (SQL Injection vulnerable)</h2>
+        <p>The SQL query is built by joining strings with user input.</p>
+        <form th:action="@{/vulnerable/login}" method="post">
+            <label>Username:</label>
+            <input type="text" name="username">
+            <label>Password:</label>
+            <input type="password" name="password">
+            <button type="submit">Login</button>
+        </form>
+        <p th:if="${sql}">Query run: <code th:text="${sql}"></code></p>
+        <p class="success" th:if="${loginResult}" th:text="${loginResult}"></p>
+        <p class="error" th:if="${loginError}" th:text="'Database error: ' + ${loginError}"></p>
+        <p>Try username: <code>admin' --</code> with any password</p>
+        <p>Or username: <code>' OR '1'='1' --</code></p>
+        <p>Or username: <code>admin'</code> to see the leaked database error</p>
+    </div>
+</main>
+</body>
+</html>

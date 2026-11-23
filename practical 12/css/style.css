@@ -1,0 +1,51 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f2f5f9;
+}
+
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #12355b, #3a7bd5);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    border-radius: 10px;
+}
+
+.brand-title {
+    font-weight: bold;
+    color: #12355b;
+}
+
+.rules {
+    font-size: 0.85rem;
+    color: #555;
+    padding-left: 18px;
+}
+
+.page-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.loan-item {
+    word-break: break-word;
+}
+
+@media (max-width: 576px) {
+    .brand-title {
+        font-size: 1.3rem;
+    }
+}
