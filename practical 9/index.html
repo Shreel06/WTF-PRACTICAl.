@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickShop Online Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>QuickShop Online Marketplace</h1>
+<p>Live product data from a REST API</p>
+</header>
+
+<main>
+<section class="controls">
+<input type="text" id="searchInput" placeholder="Search products...">
+<button id="searchBtn">Search</button>
+<select id="categorySelect">
+<option value="">All Categories</option>
+</select>
+<button id="resetBtn" class="secondary">Reset</button>
+</section>
+
+<div id="message" class="message hidden"></div>
+<div id="loader" class="loader hidden">Loading...</div>
+
+<section id="products" class="grid"></section>
+
+<section class="add-box">
+<h2>Add a New Product (POST)</h2>
+<form id="addForm">
+<input type="text" id="title" placeholder="Title" required>
+<input type="number" id="price" placeholder="Price" min="1" step="0.01" required>
+<input type="text" id="category" placeholder="Category" required>
+<textarea id="description" placeholder="Description" required></textarea>
+<button type="submit">Send Product</button>
+</form>
+<pre id="postResult" class="hidden"></pre>
+</section>
+</main>
+
+<div id="modal" class="modal hidden">
+<div class="modal-content">
+<button id="closeModal" class="close">&times;</button>
+<div id="modalBody"></div>
+</div>
+</div>
+
+<footer>
+<p>QuickShop &copy; 2026 | Data from dummyjson.com</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

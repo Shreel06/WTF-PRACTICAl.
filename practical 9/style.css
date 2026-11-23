@@ -1,0 +1,37 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f4f6f9; color: #222; }
+header { background: #1e3a8a; color: #fff; text-align: center; padding: 24px 10px; }
+header p { margin-top: 6px; opacity: 0.85; }
+main { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+.controls input { flex: 1; min-width: 180px; }
+input, select, textarea { padding: 10px; border: 1px solid #bbb; border-radius: 6px; font-size: 15px; }
+button { padding: 10px 18px; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 15px; }
+button:hover { background: #1d4ed8; }
+button.secondary { background: #6b7280; }
+.message { padding: 12px; border-radius: 6px; margin-bottom: 15px; }
+.message.success { background: #d1fae5; color: #065f46; }
+.message.error { background: #fee2e2; color: #991b1b; }
+.loader { text-align: center; padding: 20px; font-weight: bold; }
+.hidden { display: none; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.card { background: #fff; border-radius: 10px; padding: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+.card img { width: 100%; height: 170px; object-fit: contain; background: #f0f0f0; border-radius: 8px; }
+.card h3 { margin: 10px 0 5px; font-size: 17px; }
+.card .cat { color: #6b7280; font-size: 13px; text-transform: capitalize; }
+.card .price { color: #059669; font-weight: bold; font-size: 18px; margin: 6px 0; }
+.card .rating { font-size: 14px; margin-bottom: 10px; }
+.card button { margin-top: auto; }
+.add-box { background: #fff; padding: 20px; border-radius: 10px; margin-top: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.add-box form { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.add-box textarea { min-height: 80px; resize: vertical; }
+pre { background: #111827; color: #a7f3d0; padding: 12px; border-radius: 6px; margin-top: 12px; overflow-x: auto; font-size: 13px; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; padding: 15px; }
+.modal.hidden { display: none; }
+.modal-content { background: #fff; border-radius: 10px; padding: 20px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+.modal-content img { width: 100%; max-height: 220px; object-fit: contain; }
+.modal-content p { margin: 8px 0; }
+.close { position: absolute; top: 8px; right: 10px; background: transparent; color: #333; font-size: 24px; padding: 2px 8px; }
+.close:hover { background: #eee; }
+footer { text-align: center; padding: 20px; color: #666; font-size: 14px; }
+@media (max-width: 600px) { header h1 { font-size: 22px; } }
