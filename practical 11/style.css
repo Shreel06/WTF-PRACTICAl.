@@ -1,0 +1,59 @@
+:root {
+    --brand: #ff5a1f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+section,
+header {
+    scroll-margin-top: 70px;
+}
+
+.hero-emoji {
+    font-size: 5rem;
+}
+
+.emoji-lg {
+    font-size: 3.5rem;
+}
+
+.category-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.food-card {
+    transition: transform 0.3s;
+}
+
+.food-card:hover {
+    transform: scale(1.03);
+}
+
+.price {
+    color: var(--brand);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.offer-banner {
+    min-height: 200px;
+}
+
+@media (max-width: 576px) {
+    .hero-emoji {
+        font-size: 3.5rem;
+    }
+}
