@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Goa Beach Holiday", "place": "Goa", "days": 4, "type": "Beach", "description": "Relax on pristine sandy beaches, enjoy water sports, and experience lively coastal culture.", "price": 12999, "icon": "🏖️" },
+  { "id": 2, "name": "Manali Snow Retreat", "place": "Himachal Pradesh", "days": 5, "type": "Mountain", "description": "Breathtaking snowy peaks, scenic valleys, Solang valley adventures, and cozy mountain stays.", "price": 15499, "icon": "🏔️" },
+  { "id": 3, "name": "Royal Jaipur Heritage", "place": "Rajasthan", "days": 3, "type": "Heritage", "description": "Discover grand forts, magnificent palaces, vibrant bazaars, and royal Rajasthani hospitality.", "price": 9999, "icon": "🏛️" },
+  { "id": 4, "name": "Kerala Backwaters & Tea", "place": "Kerala", "days": 6, "type": "Nature", "description": "Serene houseboat cruises through Alleppey backwaters and lush green tea estates of Munnar.", "price": 18500, "icon": "🌴" },
+  { "id": 5, "name": "Rishikesh River Rafting", "place": "Uttarakhand", "days": 3, "type": "Adventure", "description": "Thrilling white water rafting on the Ganges, cliff jumping, bungee jumping, and riverside camping.", "price": 8499, "icon": "🛶" },
+  { "id": 6, "name": "Ladakh High Passes", "place": "Ladakh", "days": 7, "type": "Adventure", "description": "Traverse high altitude mountain passes, Pangong Lake, Nubra Valley, and ancient monasteries.", "price": 24999, "icon": "🏍️" },
+  { "id": 7, "name": "Andaman Island Escape", "place": "Andaman", "days": 5, "type": "Beach", "description": "Crystal-clear turquoise waters, Radhanagar beach, scuba diving, and coral reef exploration.", "price": 22000, "icon": "🌊" },
+  { "id": 8, "name": "Kaziranga Wildlife Safari", "place": "Assam", "days": 4, "type": "Nature", "description": "Explore dense jungles and spot the famous one-horned rhinoceros on jeep and elephant safaris.", "price": 13999, "icon": "🦏" }
+]

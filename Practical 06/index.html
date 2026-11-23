@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WanderGo Travels</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="offerBar" class="offer-bar">Welcome to WanderGo Travels!</div>
+
+<header>
+  <h1>WanderGo Travels</h1>
+  <nav>
+    <a href="#packages">Packages</a>
+    <a href="#myTrip">My Trip</a>
+    <a href="#about">About</a>
+    <button id="themeBtn" class="btn small">Dark Mode</button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h2 id="greeting">Explore the world with WanderGo</h2>
+    <p>Find the best tour packages for beaches, mountains, heritage places and more.</p>
+    <form id="nameForm">
+      <input type="text" id="nameInput" placeholder="Enter your name">
+      <button type="submit" class="btn">Save Name</button>
+    </form>
+    <p id="sessionInfo"></p>
+  </section>
+
+  <section id="myTrip" class="trip-box">
+    <h2>My Selected Destination</h2>
+    <p id="selectedText">No destination selected yet.</p>
+    <button id="clearBtn" class="btn hidden">Clear Selection</button>
+  </section>
+
+  <section id=  "packages">
+    <h2>Tour Packages</h2>
+
+    <div class="filter-row">
+      <label for="typeFilter">Filter by type:</label>
+      <select id="typeFilter">
+        <option value="All">All</option>
+        <option value="Beach">Beach</option>
+        <option value="Mountain">Mountain</option>
+        <option value="Heritage">Heritage</option>
+        <option value="Nature">Nature</option>
+        <option value="Adventure">Adventure</option>
+      </select>
+    </div>
+
+    <p id="status"></p>
+    <button id="retryBtn" class="btn hidden">Try Again</button>
+
+    <div id="packageList" class="package-grid"></div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>WanderGo Travels Pvt. Ltd. helps people plan simple and affordable trips across India. Choose a package, save your favourite destination and we will remember it for your next visit.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 WanderGo Travels Pvt. Ltd. All rights reserved.</p>
+</footer>
+
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h3>Special Offer!</h3>
+    <p>Book any package today and get a free travel kit.</p>
+    <button id="closePopup" class="btn">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

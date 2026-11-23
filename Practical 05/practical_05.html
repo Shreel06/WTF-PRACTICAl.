@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CityCare Hospital - Patient Registration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>CityCare Hospital</h1>
+  <p>New patient registration portal</p>
+</header>
+
+<main>
+  <form id="regForm" novalidate autocomplete="off">
+    <div id="summary" role="alert"></div>
+
+    <fieldset>
+      <legend>1. Personal details</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="firstName">First name <span class="req">*</span></label>
+          <input type="text" id="firstName" name="firstName" placeholder="e.g. Aarav" maxlength="30" required>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="lastName">Last name <span class="req">*</span></label>
+          <input type="text" id="lastName" name="lastName" placeholder="e.g. Sharma" maxlength="30" required>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="dob">Date of birth <span class="req">*</span></label>
+          <input type="date" id="dob" name="dob" min="1900-01-01" required>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="bloodGroup">Blood group <span class="req">*</span></label>
+          <select id="bloodGroup" name="bloodGroup" required>
+            <option value="">-- Select --</option>
+            <option>A+</option><option>A-</option>
+            <option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option>
+            <option>O+</option><option>O-</option>
+            <option>Not known</option>
+          </select>
+          <div class="msg"></div>
+        </div>
+        <div class="field full" id="genderField">
+          <span class="label">Gender <span class="req">*</span></span>
+          <div class="options">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+          <div class="msg"></div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Contact details</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="email">Email address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" maxlength="60" required>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="mobile">Mobile number <span class="req">*</span></label>
+          <input type="tel" id="mobile" name="mobile" placeholder="10-digit number" maxlength="10" inputmode="numeric" required>
+          <div class="hint">Starts with 6, 7, 8 or 9</div>
+          <div class="msg"></div>
+        </div>
+        <div class="field full">
+          <label for="address">Address <span class="req">*</span></label>
+          <textarea id="address" name="address" placeholder="House no, street, city" maxlength="150" required></textarea>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="pincode">PIN code <span class="req">*</span></label>
+          <input type="text" id="pincode" name="pincode" placeholder="6 digits" maxlength="6" inputmode="numeric" required>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="emergency">Emergency contact number <span class="req">*</span></label>
+          <input type="tel" id="emergency" name="emergency" placeholder="10-digit number" maxlength="10" inputmode="numeric" required>
+          <div class="msg"></div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Appointment and medical details</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="department">Department <span class="req">*</span></label>
+          <select id="department" name="department" required>
+            <option value="">-- Select --</option>
+            <option>General Medicine</option>
+            <option>Cardiology</option>
+            <option>Orthopedics</option>
+            <option>Pediatrics</option>
+            <option>Dermatology</option>
+            <option>Gynecology</option>
+          </select>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="apptDate">Preferred appointment date <span class="req">*</span></label>
+          <input type="date" id="apptDate" name="apptDate" required>
+          <div class="hint">Within the next 60 days</div>
+          <div class="msg"></div>
+        </div>
+        <div class="field full">
+          <span class="label">Existing conditions (optional)</span>
+          <div class="options">
+            <label><input type="checkbox" name="condition" value="Diabetes"> Diabetes</label>
+            <label><input type="checkbox" name="condition" value="Hypertension"> Hypertension</label>
+            <label><input type="checkbox" name="condition" value="Asthma"> Asthma</label>
+            <label><input type="checkbox" name="condition" value="Allergies"> Allergies</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="report">Previous medical report (optional)</label>
+          <input type="file" id="report" name="report" accept=".pdf,.jpg,.jpeg,.png">
+          <div class="hint">PDF, JPG or PNG, maximum 2 MB</div>
+          <div class="msg"></div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Create your account</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="username">Username <span class="req">*</span></label>
+          <input type="text" id="username" name="username" placeholder="4-15 letters, digits, _" maxlength="15" required>
+          <div class="msg"></div>
+        </div>
+        <div class="field"></div>
+        <div class="field">
+          <label for="password">Password <span class="req">*</span></label>
+          <input type="password" id="password" name="password" placeholder="Create a strong password" maxlength="32" required>
+          <div class="meter"><span id="meterBar"></span></div>
+          <div class="strength-text" id="strengthText">Strength: -</div>
+          <div class="msg"></div>
+        </div>
+        <div class="field">
+          <label for="confirmPassword">Confirm password <span class="req">*</span></label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" maxlength="32" required>
+          <div class="msg"></div>
+          <label class="show-pass"><input type="checkbox" id="showPass"> Show passwords</label>
+        </div>
+        <div class="full">
+          <ul class="rules" id="rules">
+            <li data-rule="len">8 to 32 characters</li>
+            <li data-rule="upper">One uppercase letter</li>
+            <li data-rule="lower">One lowercase letter</li>
+            <li data-rule="digit">One digit</li>
+            <li data-rule="special">One special character (@ # $ % ! & *)</li>
+            <li data-rule="space">No spaces</li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Consent</legend>
+      <div class="field" id="termsField">
+        <div class="check">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I confirm that the information given is correct and I agree to the hospital's terms and privacy policy. <span class="req">*</span></label>
+        </div>
+        <div class="msg"></div>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="sms" name="sms">
+        <label for="sms">Send me appointment reminders by SMS and email.</label>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit" class="primary">Register patient</button>
+      <button type="reset" class="secondary" id="resetBtn">Clear form</button>
+      <button type="button" class="secondary" id="fillValid">Fill valid sample</button>
+      <button type="button" class="secondary" id="fillInvalid">Fill invalid sample</button>
+    </div>
+  </form>
+
+  <section id="success" aria-live="polite"></section>
+</main>
+
+<footer>CityCare Hospital - Client-side validation demo. No data is sent anywhere.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
