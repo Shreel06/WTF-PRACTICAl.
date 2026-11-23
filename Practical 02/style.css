@@ -1,0 +1,174 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+
+.main-header {
+  background-color: #1b3d6d;  
+  color: white;              
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.main-header h1 {
+  font-size: 28px;
+}
+
+.main-header p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.navbar {
+  background-color: #274e78;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;              
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar ul li {
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px 10px;
+}
+
+
+.navbar ul li a:hover {
+  background-color: #ffffff;
+  color: #1b3d6d;
+}
+
+
+.banner {
+  background-color: #e3ecf7;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.banner h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.about {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 10px;
+  color: #1b3d6d;
+}
+
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #1b3d6d;
+}
+
+
+.faculty {
+  background-color: #e3ecf7;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.faculty h2 {
+  margin-bottom: 10px;
+  color: #1b3d6d;
+}
+
+
+.main-footer {
+  background-color: #1b3d6d;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.main-footer p {
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);  
+  }
+
+  .navbar ul {
+    flex-direction: column;   
+    align-items: center;
+  }
+
+  .main-header h1 {
+    font-size: 22px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .content-grid {
+    grid-template-columns: 1fr;   
+  }
+
+  .main-header h1 {
+    font-size: 18px;
+  }
+
+  .banner h2 {
+    font-size: 18px;
+  }
+
+  .navbar ul li a {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

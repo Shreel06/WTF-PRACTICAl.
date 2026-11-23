@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShopEase Online Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1 id="storeTitle">ShopEase</h1>
+  <button id="menuBtn">Menu</button>
+  <nav>
+    <ul id="menuList">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+  <button id="themeBtn">Dark mode</button>
+</header>
+
+<main>
+  <section class="hero" id="about">
+    <h2 id="heroTitle">Shop smarter, not slower</h2>
+    <p id="heroText">Hover a product to preview it, double-click it to save it, and watch your cart update without any page reload.</p>
+    <button id="changeBtn">Show today's offer</button>
+    <button id="resetBtn">Reset heading</button>
+  </section>
+
+  <div id="message">Welcome to ShopEase! Try clicking a button.</div>
+
+  <div class="layout" id="shop">
+    <div>
+      <h2>Products</h2>
+      <div class="toolbar">
+        <input type="text" id="searchBox" placeholder="Search products (type here)">
+        <select id="categorySelect">
+          <option value="all">All categories</option>
+          <option value="tech">Tech</option>
+          <option value="fashion">Fashion</option>
+          <option value="home">Home</option>
+        </select>
+        <button id="addProductBtn">Add a new product</button>
+      </div>
+      <ul class="products" id="productList">
+        <li class="product" data-category="tech" data-name="Wireless Headphones" data-price="1999" data-color="#17bebb" data-emoji="🎧">
+          <img alt="Wireless Headphones">
+          <h3>Wireless Headphones</h3>
+          <p>Rs. 1999</p>
+          <button class="buyBtn">Add to cart</button>
+        </li>
+        <li class="product" data-category="fashion" data-name="Canvas Backpack" data-price="1299" data-color="#e4572e" data-emoji="🎒">
+          <img alt="Canvas Backpack">
+          <h3>Canvas Backpack</h3>
+          <p>Rs. 1299</p>
+          <button class="buyBtn">Add to cart</button>
+        </li>
+        <li class="product" data-category="home" data-name="Desk Lamp" data-price="799" data-color="#f2b134" data-emoji="💡">
+          <img alt="Desk Lamp">
+          <h3>Desk Lamp</h3>
+          <p>Rs. 799</p>
+          <button class="buyBtn">Add to cart</button>
+        </li>
+        <li class="product" data-category="tech" data-name="Smart Watch" data-price="2999" data-color="#6a4c93" data-emoji="⌚">
+          <img alt="Smart Watch">
+          <h3>Smart Watch</h3>
+          <p>Rs. 2999</p>
+          <button class="buyBtn">Add to cart</button>
+        </li>
+      </ul>
+      <p id="stats"></p>
+    </div>
+
+    <aside>
+      <section>
+        <h3>Image preview</h3>
+        <img id="previewImg" alt="Product preview">
+        <p id="previewName">Hover a product to see it here.</p>
+        <button id="replaceBtn">Replace preview text</button>
+      </section>
+      <section>
+        <h3>Your cart</h3>
+        <ol id="cartList"><li class="empty">Cart is empty</li></ol>
+        <p>Total: Rs. <span id="total">0</span></p>
+        <button id="clearBtn">Clear cart</button>
+      </section>
+    </aside>
+  </div>
+
+  <h2 id="reviews">Customer reviews</h2>
+  <form id="reviewForm">
+    <label for="nameInput">Your name</label>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <label for="commentInput">Your comment</label>
+    <textarea id="commentInput" rows="3" maxlength="120" placeholder="Write something about ShopEase"></textarea>
+    <span id="counter">0 / 120 characters</span>
+    <button type="submit">Post comment</button>
+  </form>
+  <ul id="commentList"></ul>
+</main>
+
+<footer>
+  <p>ShopEase Online Store - made for the DOM and Events lab</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
